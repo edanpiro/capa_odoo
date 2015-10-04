@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="reg_sale_wizard" model="ir.ui.view">
+            <field name="name">reg.sale</field>
+            <field name="model">reg.sale</field>
+            <field name="arch" type="xml">
+                <form string="Registro de Ventas">
+                    <group>
+                        <field name="period_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <footer>
+                        <widget type="download_button" model="reg.sale.xls" class="oe_highlight" string="print"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="reg_sale_action" model="ir.actions.act_window">
+            <field name="name">Registro Venta</field>
+            <field name="res_model">reg.sale</field>
+            <field name="src_model">reg.sale</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Informes legales peruanos" id="report_legal_elect" parent="account.menu_finance_reports"/>
+        <menuitem name="Registro ventas" id="action_reg_sale_action" parent="report_legal_elect" action="reg_sale_action" sequence="0"/>
+    </data>
+</openerp>
