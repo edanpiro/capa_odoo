@@ -5,6 +5,7 @@
     'depends': ['mail', 'project'],
     'application': True,
     'data': [
-        "view/res_partner_view.xml"
+        "view/res_partner_view.xml",
+        "wizard/reg_sale_view_wizard.xml"
     ]
 }
